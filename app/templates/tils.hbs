@@ -1,7 +1,20 @@
 {{outlet}}
+<div class="container">
+  <div class="col-lg-12 text-center">
+    <h1>TIL - Today I Learned</h1>
+  </div>
+  <div class="row col-lg-6">
 
-<ul>
-  {{#each model as |til|}}
-    {{til-block til=til}}
-  {{/each}}
-</ul>
+  <form {{action 'createTil' this description on='submit'}}>
+    {{input type="textarea" value=description}}
+    <input type="submit" value="Submit Til!">
+  </form>
+  </div>
+  <div class="col-lg-12">
+    <ul class="list-unstyled">
+      {{#each model as |til|}}
+        {{til-block til=til}}
+      {{/each}}
+    </ul>
+  </div>
+</div>

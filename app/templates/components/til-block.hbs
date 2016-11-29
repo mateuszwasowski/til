@@ -1,4 +1,6 @@
 {{yield}}
 
-<li>{{til.description}}</li>
-<li id="author-small">{{til.author.email}}</li>
+<li class="notepad" style="margin-bottom:5px">
+  {{markdown-to-html til.description }}
+  <span id="author-small">{{til.author.email}}</span>
+</li>

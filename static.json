@@ -1,0 +1,10 @@
+{
+  "root": "dist",
+  "routes": {
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/": {
+      "origin": "https://api-til.herokuapp.com/"
+  }
+}

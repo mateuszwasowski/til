@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('til')
+    return this.store.findAll('til');
   },
 
   actions: {
@@ -10,7 +10,7 @@ export default Ember.Route.extend({
       var author = this.store.peekRecord('author', 1);
     //  return this.store.createRecord('til', { description: desc, author: author})
       const newTil = this.store.createRecord('til', { description: desc, author: author});
-      newTil.save()
+      newTil.save();
     }
   }
 });

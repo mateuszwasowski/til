@@ -43,7 +43,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.apiHost = 'https://api-til.herokuapp.com/';
   }
 
   return ENV;

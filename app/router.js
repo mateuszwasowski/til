@@ -7,8 +7,6 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-
-  this.route('tils', { path: '/tils' });
   this.route('authors', { path: '/author/:author_id' });
 });
 

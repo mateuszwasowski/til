@@ -10,10 +10,10 @@ export default GitHubOauth2Provider.extend({
   open() {
     return this._super().then((toriiData) => {
       const authCode = toriiData.authorizationCode;
-      const serverUrl =  `${ENV.apiHost}/github_auth?code=${authCode}`;
+      const serverUrl =  `http://localhost:3000/github_auth?code=${authCode}`;
       return this.get('ajax').request(serverUrl)
         .then((data) => {
-          toriiData.accessToken = data.token;
+          toriiData.author = data.data;
           return toriiData;
         });
     });

@@ -3,7 +3,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   session: Ember.inject.service(),
-   actions: {
+  actions: {
      login(){
        this.get("session").login();
        this.transitionToRoute('/');

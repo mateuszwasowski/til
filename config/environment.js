@@ -20,10 +20,18 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    torii: {
+      providers: {
+        'github-oauth2': {
+          apiKey: '5762e8fb6f0ffd84f7d9'
+        }
+      }
     }
   };
 
   if (environment === 'development') {
+      ENV.apiHost = 'http://localhost:3000';
     //ENV.apiHost = 'https://api-til.herokuapp.com';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;

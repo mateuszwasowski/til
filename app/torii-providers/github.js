@@ -13,7 +13,7 @@ export default GitHubOauth2Provider.extend({
       const serverUrl =  `http://localhost:3000/github_auth?code=${authCode}`;
       return this.get('ajax').request(serverUrl)
         .then((data) => {
-          toriiData.author = data.data;
+          toriiData.author = data;
           return toriiData;
         });
     });

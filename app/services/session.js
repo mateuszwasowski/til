@@ -8,7 +8,7 @@ export default Ember.Service.extend({
   ajax: Ember.inject.service(),
   store: Ember.inject.service(),
   login(){
-      this.get('torii').open('github').then(data => {
+      this.get('torii').open('google').then(data => {
         this.set('currentUser', data.author);
         Cookies.set('author', data.author);
       });

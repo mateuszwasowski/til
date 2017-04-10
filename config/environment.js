@@ -23,8 +23,9 @@ module.exports = function(environment) {
     },
     torii: {
       providers: {
-        'github-oauth2': {
-          apiKey: '5762e8fb6f0ffd84f7d9'
+        'google-oauth2': {
+          apiKey: '362924413386-f8ji794cklrktsqdvo59076695k6rst5.apps.googleusercontent.com',
+          redirectUri: 'http://localhost:4200/'
         }
       }
     }

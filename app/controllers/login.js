@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   session: Ember.inject.service(),
   actions: {
      login(){
-       this.get("session").login()
+       this.get("session").login();
         this.transitionToRoute('/');
      }
    }

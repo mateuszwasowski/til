@@ -4,7 +4,7 @@ import Cookies from 'ember-cli-js-cookie';
 export default Ember.Route.extend({
   session: Ember.inject.service(),
   beforeModel() {
-    console.log('index!!')
+    console.log('index!!');
     if(!Cookies.get('authorId')){
       this.transitionTo('/login');
     }

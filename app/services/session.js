@@ -9,7 +9,6 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
   login(){
       this.get('torii').open('google').then(data => {
-        this.set('currentUser', data.author);
         Cookies.set('authorId', data.author.data.id);
         this.initializeFromCookie();
       });
@@ -28,7 +27,7 @@ export default Ember.Service.extend({
     console.log(authorId);
     if(!!authorId){
       this.get('store').findRecord('author', authorId).then(author => {
-          this.set('currentUser', author);
+        this.set('currentUser', author);
       });
     }
   },

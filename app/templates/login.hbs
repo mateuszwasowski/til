@@ -1,9 +1,3 @@
-{{#if session.isWorking}}
-  One sec while we get you signed in...
-{{else}}
-  {{error}}
-  <a href="#" {{action 'login'}}>
-    Sign In
-  </a>
-  <p>{{session.currentUser}}</p>
-{{/if}}
+<a href="#" {{action 'login'}}>
+  Sign In
+</a>

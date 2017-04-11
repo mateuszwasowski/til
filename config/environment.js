@@ -25,7 +25,7 @@ module.exports = function(environment) {
       providers: {
         'google-oauth2': {
           apiKey: '362924413386-f8ji794cklrktsqdvo59076695k6rst5.apps.googleusercontent.com',
-          redirectUri: 'http://localhost:4200/'
+          redirectUri: 'https://api-til.herokuapp.com'
         }
       }
     }

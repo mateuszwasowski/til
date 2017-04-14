@@ -14,7 +14,7 @@ export default Ember.Service.extend({
       });
   },
   logout(){
-    this.set("currentUser", null);
+    this.set("authorId", null);
     Cookies.remove('authorId');
   },
   init(){
@@ -22,13 +22,11 @@ export default Ember.Service.extend({
     this.initializeFromCookie();
   },
   initializeFromCookie(){
-    var authorId = Cookies.get('authorId');
+    var authorId = Cookies.get('authorId')
     console.log("author id is:");
     console.log(authorId);
     if(!!authorId){
-      this.get('store').findRecord('author', authorId).then(author => {
-        this.set('currentUser', author);
-      });
+      this.set('authorId', authorId);
     }
   },
 });

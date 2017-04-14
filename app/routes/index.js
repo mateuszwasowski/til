@@ -16,7 +16,7 @@ export default Ember.Route.extend({
   actions: {
     createTil(til, desc) {
         let newTil = this.store.createRecord('til', { description: desc });
-        this.store.findRecord('author', this.get("session").currentUser.id).then(author => {
+        this.store.findRecord('author', this.get("session").authorId).then(author => {
           newTil.set('author', author);
           newTil.save();
         });

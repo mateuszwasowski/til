@@ -3,20 +3,21 @@ import Cookies from 'ember-cli-js-cookie';
 
 export default Ember.Route.extend({
   session: Ember.inject.service(),
+  pusher: Ember.inject.service(),
   beforeModel() {
     console.log('index!!');
-    if(!Cookies.get('authorId')){
-      this.transitionTo('/login');
-    }
+    //if(!Cookies.get('authorId')){
+  //    this.transitionTo('/login');
+  //  }
   },
   model() {
-    return this.store.findAll('til');
+    return this.get('pusher').listenForTils()
   },
 
   actions: {
     createTil(til, desc) {
         let newTil = this.store.createRecord('til', { description: desc });
-        this.store.findRecord('author', this.get("session").authorId).then(author => {
+        this.store.findRecord('author', 5).then(author => {
           newTil.set('author', author);
           newTil.save();
         });

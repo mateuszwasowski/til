@@ -1,4 +1,3 @@
-//services/session.js
 import Ember from 'ember';
 import Cookies from 'ember-cli-js-cookie';
 
@@ -22,7 +21,7 @@ export default Ember.Service.extend({
     this.initializeFromCookie();
   },
   initializeFromCookie(){
-    var authorId = Cookies.get('authorId')
+    var authorId = Cookies.get('authorId');
     console.log("author id is:");
     console.log(authorId);
     if(!!authorId){

@@ -28,6 +28,9 @@ module.exports = function(environment) {
           redirectUri: 'https://til-mw.herokuapp.com/'
         }
       }
+    },
+    pusher: {
+      key: '859abe1d821717f11add'
     }
   };
 

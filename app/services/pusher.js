@@ -20,6 +20,9 @@ export default Ember.Service.extend({
   subscribe(channelName, event, callback) {
     const channel = this.get('_client').subscribe(channelName);
     channel.bind(event, callback);
+    channel.bind('pusher:subscription_succeeded', (data) => {
+      this.get('store').findAll('til');
+    });
   },
 
   _pushPayload(data) {
@@ -27,8 +30,8 @@ export default Ember.Service.extend({
   },
 
   _client: computed(function() {
-    Pusher.logToConsole = config.environment !== "production";
+    Pusher.logToConsole = true;
 
-    return new Pusher(config.pusher.key);
+    return new Pusher(config.pusher.key, { cluster: 'eu', encrypted: true });
   })
 });

@@ -5,14 +5,10 @@ export default Ember.Component.extend({
   session: Ember.inject.service(),
   actions: {
     vote(til_id){
-      const store = this.get("store");
-      let newVote = store.createRecord('vote', {});
-      store.findRecord('til', til_id).then((til) => {
-        store.findRecord('author', this.get("session").authorId).then(author => {
-          newVote.set('author', author);
-          newVote.set('til', til);
-          newVote.save();
-        });
+      let newVote = this.get('store').createRecord('vote', {til: til});
+      this.get('store').findRecord('author', this.get("session").authorId).then(author => {
+        newVote.set('author', author);
+        newVote.save();
       });
     },
   }

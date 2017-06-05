@@ -4,5 +4,6 @@ export default DS.Model.extend({
   email: DS.attr('string'),
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
-  tils: DS.hasMany('til')
+  tils: DS.hasMany('til'),
+  votes: DS.hasMany('vote')
 });

@@ -1,7 +1,15 @@
 {{yield}}
 
 <li class="notepad" style="margin-bottom:5px">
-  <button {{action 'vote' til}}>Vote!</button>
+  {{#deferred-content hasVote as |d|}}
+    {{#d.fulfilled as |result|}}
+      {{#unless result}}
+        <button {{action 'vote' til.id}}>Vote!</button>
+      {{/unless}}
+    {{/d.fulfilled}}
+  {{/deferred-content}}
+
+  <!-- <button {{action 'vote' til.id}}>Vote!</button> -->
   {{til.votes.length}}
   {{markdown-to-html til.description }}
   <span id="author-small">{{til.author.email}}</span>

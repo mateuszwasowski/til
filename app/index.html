@@ -6,6 +6,7 @@
     <title>Til</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-signin-client_id" content="362924413386-f8ji794cklrktsqdvo59076695k6rst5.apps.googleusercontent.com">
 
     {{content-for "head"}}
 
@@ -17,6 +18,7 @@
   </head>
   <body>
     {{content-for "body"}}
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://js.pusher.com/3.1/pusher.min.js"></script>
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/til.js"></script>

@@ -1,5 +1,6 @@
 body {
-  background-color: whitesmoke;
+  background-color: #400094;
+  background-image: url('/assets/images/gplay.png')
 }
 
 #author-small {
@@ -37,4 +38,12 @@ textarea {
 .til-list {
   max-height: 400px;
   overflow-y:scroll;
+}
+
+.g-signin2{
+  width: 100%;
+}
+
+.g-signin2 > div{
+  margin: 0 auto;
 }

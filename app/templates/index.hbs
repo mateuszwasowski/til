@@ -21,14 +21,14 @@
       </div>
       <ul class="list-inline">
         <li class="pull-right" style="padding:0;">
-          <button class="btn waves-effect" type="submit">SUBMIT<i class="material-icons right">send</i></button>
+          <button class="btn btn-super" type="submit" style="margin-bottom:20px;">SUBMIT<i class="material-icons right">send</i></button>
         </li>
       </ul>
     </form>
   </div>
 
-  <div class="col-lg-7 col-centered tils-box">
-    <ul class="list-unstyled til-list">
+  <div class="col-lg-7 col-centered tils-box" style="padding:0">
+    <ul class="list-unstyled til-list" style="padding-top:10px;">
       {{#each model as |til|}}
         {{til-block til=til}}
       {{/each}}

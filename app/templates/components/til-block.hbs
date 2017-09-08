@@ -5,9 +5,9 @@
   </li>
   <div style="background-color:#EEEEEE;height:50px;border-top:1px solid rgba(0,0,0,.12);padding:10px;;">
     <p style="float:left">
-      <div class="btn" style="background-color:#66BB6A;">{{til.votes.length}}</div>
       {{#deferred-content hasVote as |d|}}
         {{#d.fulfilled as |result|}}
+            <div class="btn" style="background-color:#66BB6A;">{{til.votes.length}}</div>
           {{#unless result}}
             <button class="btn btn-super" {{action 'vote' til.id}}><i class="material-icons">thumb_up</i></button>
           {{/unless}}

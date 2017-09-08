@@ -5,13 +5,13 @@ const { computed, run } = Ember;
 
 export default Ember.Service.extend({
   store: Ember.inject.service(),
-  listenForTils() {
+  listenForTils(refreshFunction) {
     if (this.get('hasSubscribedToTils')) {
       return;
     }
 
     this.subscribe(`tils`, "objectsUpdated", (data) => {
-      run.scheduleOnce('afterRender', this, this._pushPayload, data);
+      run.scheduleOnce('afterRender', this, refreshFunction, data);
     });
 
     this.set('hasSubscribedToTils', true);

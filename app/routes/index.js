@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   session: Ember.inject.service(),
   pusher: Ember.inject.service(),
   activate(){
-    this.get('pusher').listenForTils();
+    this.get('pusher').listenForTils(this.refresh.bind(this));
   },
   beforeModel() {
     if(!Cookies.get('authorId')){

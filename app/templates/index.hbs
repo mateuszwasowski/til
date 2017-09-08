@@ -15,7 +15,7 @@
 
 <div class="container" style="width:100%">
   <div class="row col-lg-7 col-centered input-box">
-    <form {{action 'createTil' this description on='submit'}}>
+    <form {{action 'createTil' this description on='submit'}} onsubmit="this.reset();">
       <div class="form-group">
         {{textarea value=description placeholder="What have you learned today?" style="display:inline-block;" rows="3" class="notepad"}}
       </div>

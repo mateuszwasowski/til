@@ -1,27 +1,33 @@
 {{outlet}}
-<div class="container">
-  <div class="col-lg-12 text-center" style="margin-top:50px;margin-bottom:50px">
-    <h1 id="logo">TIL</h1>
-  </div>
-  <div class="row col-lg-6 col-centered" style="margin-bottom:25px">
-  <a href="#" {{action 'logout'}}>
-    Logout
-  </a>
-  </div>
-  <div class="row col-lg-6 col-centered" style="margin-bottom:25px">
+
+<div class="container" style="background-color:#4CAF50;width:100%">
+    <nav class="col-lg-7 col-centered" style="margin-top:30px;margin-bottom:200px">
+      <p class="navbar-left">
+        <h1 id="logo-left">TIL</h1>
+      </p>
+      <p class="navbar-right">
+        <a href="#" {{action 'logout'}}>
+          <img src="../assets/images/logout-btn.png" height="25px" style="margin-top:-5px">
+        </a>
+      </p>
+    </nav>
+</div>
+
+<div class="container" style="width:100%">
+  <div class="row col-lg-7 col-centered input-box">
     <form {{action 'createTil' this description on='submit'}}>
       <div class="form-group">
         {{textarea value=description placeholder="What have you learned today?" style="display:inline-block;" rows="3" class="notepad"}}
       </div>
       <ul class="list-inline">
         <li class="pull-right" style="padding:0;">
-          <button class="form-button btn btn-primary" type="submit">Submit Til!</button>
+          <button class="btn waves-effect" type="submit">SUBMIT<i class="material-icons right">send</i></button>
         </li>
       </ul>
     </form>
   </div>
 
-  <div class="col-lg-6 col-centered">
+  <div class="col-lg-7 col-centered tils-box">
     <ul class="list-unstyled til-list">
       {{#each model as |til|}}
         {{til-block til=til}}

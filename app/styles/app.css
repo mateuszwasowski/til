@@ -10,9 +10,15 @@ body {
 #logo {
   font-family: 'Lobster', cursive;
   font-size: 6em;
-  text-shadow: 1px 1px 5px rgba(43, 40, 40, 1);
+  text-shadow: 1px 1px 3px rgba(43, 40, 40, 1);
   color: whitesmoke;
   padding-bottom: 50px;
+}
+
+#logo-left {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  color: whitesmoke;
 }
 
 textarea {
@@ -22,19 +28,95 @@ textarea {
   box-sizing: border-box;
 }
 
-.col-centered{
+.col-centered {
     float: none;
     margin: 0 auto;
 }
 
+.input-box {
+  padding-top:30px;
+  background-color:whitesmoke;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  position: relative;
+  top: -70px;
+}
+
+.tils-box {
+  position: relative;
+  top: -30px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background-color:whitesmoke;
+}
+
 .notepad {
-  background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
   font: normal 14px verdana;
   line-height: 25px;
   padding: 2px 10px;
   border: solid 1px #ddd;
 }
 
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+i.right {
+    float: right;
+    margin-left: 15px;
+}
+
+.btn i {
+  font-size: 1.3rem;
+  line-height: 21px;;
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: #FF8F00;
+  text-align: center;
+  letter-spacing: .5px;
+  -webkit-transition: .2s ease-out;
+  transition: .2s ease-out;
+  cursor: pointer;
+  margin-bottom:20px;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+.btn:hover {
+  background-color: #FFA000;
+  color: whitesmoke;
+}
 .til-list {
   max-height: 400px;
   overflow-y:scroll;
@@ -51,4 +133,9 @@ textarea {
 
 .login-card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.navbar-right {
+  margin-top: 40px;
+  margin-right: 0px !important;
 }
